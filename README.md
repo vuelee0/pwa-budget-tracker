@@ -36,4 +36,4 @@ For any questions about this project, contact me at:
 - Email: vuelee09@gmail.com
 
 ## Screenshots
-![image](./public/images/)
+![image](./public/img/budget-tracker-SS.png)
