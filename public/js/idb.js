@@ -20,7 +20,7 @@ request.onsuccess = function(event) {
   
     // check if app is online, if yes run uploadBudgetTracker() function to send all local db data to api
     if (navigator.onLine) {
-        uploadBudgetTracker();
+        // uploadBudgetTracker();
     }
 };
   
@@ -31,7 +31,7 @@ request.onerror = function(event) {
 
 
 // This function will be executed if we attempt to submit a new budget tracker and there's no internet connection
-function saveRecord(transaction) {
+function saveRecord(record) {
     // open a new transaction with the database with read and write permissions 
     const transaction = db.transaction(['new_budget_tracker'], 'readwrite');
   
@@ -57,7 +57,7 @@ function uploadBudgetTracker() {
     getAll.onsuccess = function() {
         // if there was data in indexedDb's store, let's send it to the api server
         if (getAll.result.length > 0) {
-            fetch('/api/transaction', {
+            fetch('/api/transaction/bulk', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
@@ -77,7 +77,7 @@ function uploadBudgetTracker() {
                 // clear all items in your store
                 budgetTrackerObjectStore.clear();
 
-                alert('All saved pizza has been submitted!');
+                alert('All savings and expenses has been submitted!');
             })
             .catch(err => {
                 onsole.log(err);
