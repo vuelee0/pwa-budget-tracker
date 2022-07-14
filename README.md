@@ -1,4 +1,4 @@
-# Budget Tracker Starter Code
+# Budget Tracker
 
 
 ## Description
@@ -25,7 +25,7 @@ SO THAT my account balance is accurate when I am traveling
 * [Screenshots](#screenshots)
 
 ## Installation
-Use 'npm init' to install the necessary npm packages to run this project.
+Use `npm init` to install the necessary npm packages to run this project.
 
 ## Usage
 Track withdrawals and deposits with or without an internet connection.
